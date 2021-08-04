@@ -11,4 +11,4 @@ COPY . /app
 
 EXPOSE 8080
 
-CMD [ "python3", "./mainalertman3omi.py"]
+CMD [ "python3", "./mainAlertman2omi.py"]
