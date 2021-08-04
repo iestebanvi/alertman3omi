@@ -1,7 +1,6 @@
 from datetime import date, datetime
 from flask import Flask, request, jsonify, make_response, redirect, url_for
 import json
-import gevent.pywsgi
 
 app = Flask(__name__)
 
@@ -12,8 +11,8 @@ def status():
 @app.route("/webhook", methods=['POST'])
 def webhook():
   alertFromAlertmanager = request.json
-  print(json.dumps(alertFromAlertmanager))
-  print(json.dumps(alertFromAlertmanager), indent=2)
+  #print(json.dumps(alertFromAlertmanager))
+  print("Incoming JSON: ", json.dumps(alertFromAlertmanager), indent=2)
   
   return {
     "mensaje": "recepcionado y devuelto",
