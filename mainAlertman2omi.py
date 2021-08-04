@@ -12,7 +12,7 @@ def status():
 def webhook():
   alertFromAlertmanager = request.json
   #print(json.dumps(alertFromAlertmanager))
-  print("Incoming JSON: ", json.dumps(alertFromAlertmanager), indent=2)
+  print("Incoming JSON: ", json.dumps(alertFromAlertmanager))
   
   return {
     "mensaje": "recepcionado y devuelto",
