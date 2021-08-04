@@ -1,7 +1,4 @@
 flask
-Flask-PyMongo
-pymongo
-werkzeug
 jsonify
 jwt
 
