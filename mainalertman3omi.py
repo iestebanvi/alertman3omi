@@ -16,10 +16,12 @@ def root():
 def webhook():
   alertFromAlertmanager = request.json
   print("Incoming JSON:", alertFromAlertmanager)
-  reformatedRequestJson = json.dumps(alertFromAlertmanager) 
-  print("Incoming JSON Reformated", reformatedRequestJson)
-
-  return {'mensaje': 'recibido'}
+  
+  return {
+    "mensaje": "recepcionado y devuelto",
+    "varAlertFromAlertmanager": alertFromAlertmanager
+    
+    }
 
 
 if __name__ == '__main__':
