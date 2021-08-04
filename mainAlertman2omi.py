@@ -8,21 +8,16 @@ app = Flask(__name__)
 def status():
   return "I'm alive.", 200
 
-@app.route('/', methods=['GET'])
-def root():
-    return redirect(url_for('status'))
-
 @app.route("/webhook", methods=['POST'])
 def webhook():
   alertFromAlertmanager = request.json
-  print("Incoming JSON:", alertFromAlertmanager)
+  #print("Incoming JSON:", alertFromAlertmanager)
+  print(json.dumps(alertFromAlertmanager, indent=2))
   
   return {
     "mensaje": "recepcionado y devuelto",
     "varAlertFromAlertmanager": alertFromAlertmanager
-    
     }
-
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8080)
