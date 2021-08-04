@@ -12,8 +12,8 @@ def status():
 @app.route("/webhook", methods=['POST'])
 def webhook():
   alertFromAlertmanager = request.json
-  #print("Incoming JSON:", alertFromAlertmanager)
   print(json.dumps(alertFromAlertmanager))
+  print(json.dumps(alertFromAlertmanager), indent=2)
   
   return {
     "mensaje": "recepcionado y devuelto",
