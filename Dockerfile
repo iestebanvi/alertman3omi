@@ -6,8 +6,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 WORKDIR /app
 COPY . /app
-RUN useradd appuser && chown -R appuser /app
-USER appuser
+#RUN useradd appuser && chown -R appuser /app
+#USER appuser
 
 EXPOSE 8080
 
