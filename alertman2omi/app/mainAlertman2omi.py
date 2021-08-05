@@ -10,7 +10,7 @@ app = Flask(__name__)
 xmlTemplate="""<omi-event-message><title></title><description></description><severity></severity><node></node><object></object><category></category><subcategory></subcategory><affectedCI></affectedCI></omi-event-message>"""
 
 try:
-    ENV_URL = os.environ.get("OMI_URL", "http://omireceiver.alertman2omi.svc:8080/post")
+    ENV_URL = os.environ.get("OMI_URL", "http://127.0.0.1:8080/postomi")
     ENV_CATEGORY = os.environ.get("OMI_CATEGORY", "OMI_CATEGORYOOCP4")
     ENV_HOSTNAMECI = os.environ.get("OMI_CI", "HOSTNAME_ocp4")
 except Exception as ex:
@@ -48,7 +48,7 @@ def webhook():
 
   #Compactamos todas las alerts si en un POST vienen agrupadas en un array
   for alert in alertFromAlertmanager['alerts']:
-    if alert != alertFromAlertmanager['alerts'][-1]:  # Miramos si es el ultmo apra no pintar |
+    if alert != alertFromAlertmanager['alerts'][-1]:  # Miramos si es el ultmo para no pintar '|'
       compactAlert = compactAlert + alert['annotations']['message'] + "|"
     else:
       compactAlert = compactAlert + alert['annotations']['message']
