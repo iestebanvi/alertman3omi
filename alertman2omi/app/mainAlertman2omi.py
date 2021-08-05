@@ -10,7 +10,7 @@ app = Flask(__name__)
 xmlTemplate="""<omi-event-message><title></title><description></description><severity></severity><node></node><object></object><category></category><subcategory></subcategory><affectedCI></affectedCI></omi-event-message>"""
 
 try:
-    ENV_URL = os.environ.get("OMI_URL", "http://omieceiver.alertman3omi:8080/postomi")
+    ENV_URL = os.environ.get("OMI_URL", "http://omieceiver.alertman3omi:8081/postomi")
     ENV_CATEGORY = os.environ.get("OMI_CATEGORY", "OMI_CATEGORYOOCP4")
     ENV_HOSTNAMECI = os.environ.get("OMI_CI", "HOSTNAME_ocp4")
 except Exception as ex:
