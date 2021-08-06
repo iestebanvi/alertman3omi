@@ -5,12 +5,23 @@ metadata:
     deployment.kubernetes.io/revision: "4"
     image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"alertman2omi:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"alertman2omi\")].image"}]'
     openshift.io/generated-by: OpenShiftNewApp
+  generation: 4
   labels:
     app: alertman2omi
     app.kubernetes.io/component: alertman2omi
     app.kubernetes.io/instance: alertman2omi
+    manager: oc
+    operation: Update
+    time: "2021-08-05T16:39:25Z"
+  - apiVersion: apps/v1
+    manager: openshift-controller-manager
+    operation: Update
+    time: "2021-08-05T17:20:11Z"
+  - apiVersion: apps/v1
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-08-06T00:14:37Z"
   name: alertman2omi
-  namespace: alertman3omi
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
