@@ -1,10 +1,12 @@
 # alertman3omi
 
 
-
-
+#Proyecto para convertir las alarmas que vienen de alertmanager a OMI/OBM.
+## Deploy de la aplicaicon omiReceiver en Openshift
 oc new-app https://github.com/iestebanvi/alertman3omi --context-dir=omiReceiver/app --name=omieceiver
+## Deploy de la aplicaicon alertman2omi en Openshift
 oc new-app https://github.com/iestebanvi/alertman3omi --context-dir=alertman2omi/app --name=alertman2omi
+## Start de Build de
 oc start-build alertman3omi
 
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://alertman2omi-alertman3omi.apps.ocp4poc.example.com/status -v
