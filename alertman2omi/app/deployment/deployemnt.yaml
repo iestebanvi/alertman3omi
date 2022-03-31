@@ -59,6 +59,13 @@ spec:
     spec:
       containers:
       - image: image-registry.openshift-image-registry.svc:5000/alertman3omi/alertman2omi@sha256:b00ae82a27a8a0d4f33df44bf249ed2e619342a058242aad1217d3d4f2328c07
+        volumeMounts:
+        - name: python-persistent-storage
+          mountPath: /app
+      volumes:
+      - name: python-persistent-storage
+        persistentVolumeClaim:
+          claimName: python-pvc
         imagePullPolicy: IfNotPresent
         name: alertman2omi
         ports:
