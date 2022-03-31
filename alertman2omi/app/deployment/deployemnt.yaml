@@ -1,3 +1,18 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: python-pvc
+  namespace: alertman3omi
+spec:
+  storageClassName: "sc-trident-iscsi-eco"
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
